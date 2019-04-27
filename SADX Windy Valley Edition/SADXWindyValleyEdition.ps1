@@ -1,5 +1,5 @@
-#>>> Script that renders every track in Sonic Adventure DX PC Windy Valley 1 for the authentic '08   <<<#
-#>>> pirate version experience (or reverts the game back to normal if this has already been done)!  <<<#
+#>>> Script that renders every track in Sonic Adventure DX PC Windy Valley 1 for the authentic '08 <<<#
+#>>> pirate version experience (or reverts the game back to normal if this has already been done)! <<<#
 
 # Prompt user to input SADX install directory (containing sonic.exe and subfolders)
 $installPath = Read-Host -Prompt "Enter the directory of the folder in which SADX is installed (i.e. where sonic.exe and system, savedata etc. folders should be)"
