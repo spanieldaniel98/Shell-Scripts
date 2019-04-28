@@ -1,6 +1,6 @@
 #!/bin/sh
-# Note: to replace Windows line endings with Unix ones (i.e. CRLF -> LF) in this file, 
-# run the following command in the command line (in this script's saved directory): 
+# Note: to replace Windows line endings with Unix ones (i.e. CRLF -> LF) in this file if 
+# need be, run the following command in the command line (in this script's saved directory): 
 # sed -i.bak 's/\r$//' SADXWindyValleyEdition.sh
 #>>> Script that renders every track in Sonic Adventure DX PC Windy Valley 1 for the authentic '08 <<<#
 #>>> pirate version experience (or reverts the game back to normal if this has already been done)! <<<#
@@ -21,6 +21,7 @@ if [ $(stat -c %s "$wmaPath/advamy.wma") -eq $(stat -c %s "$wmaPath/advbig.wma")
 else
     printf "Working..."
     # Initialise tracks and path variables
+    IFS=$'\n'
     tracks=$(find "$wmaPath" -name "*.wma" -not -name "wndyvly1*")
     windyValleyPath="$wmaPath/wndyvly1.wma"
     windyValleyCopyPath="$wmaPath/wndyvly1-copy.wma"
@@ -29,7 +30,7 @@ else
     cp -a "$wmaPath"/*.wma "$backupPath"
     # Replace each other track with Windy Valley 1 music
     for track in $tracks; do
-        rm "$track"
+        rm $track
         cp "$windyValleyPath" "$windyValleyCopyPath"
         mv "$windyValleyCopyPath" "$track"
     done
